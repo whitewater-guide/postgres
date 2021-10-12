@@ -14,7 +14,7 @@ RUN apt-get update \
 # Install pg_partman
 # https://github.com/pgpartman/pg_partman
 RUN apt-get update \
-    && apt-get install --no-install-recommends -yy git make gcc postgresql-server-dev-all ca-certificates \
+    && apt-get install --no-install-recommends -yy git make gcc postgresql-server-dev-13 ca-certificates \
     && git clone --depth 1 --branch ${PARTMAN_VERSION} https://github.com/pgpartman/pg_partman.git /tmp/pg_partman \
     && cd /tmp/pg_partman && make install \
     && cd /tmp && rm -rf pg_partman \
