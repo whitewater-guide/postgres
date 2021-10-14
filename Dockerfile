@@ -18,6 +18,6 @@ RUN apt-get update \
     && git clone --depth 1 --branch ${PARTMAN_VERSION} https://github.com/pgpartman/pg_partman.git /tmp/pg_partman \
     && cd /tmp/pg_partman && make install \
     && cd /tmp && rm -rf pg_partman \
-    && apt-get remove --purge -yy git make gcc postgresql-server-dev-all \
+    && apt-get remove --purge -yy git make gcc postgresql-server-dev-13 \
     && rm -rf /var/lib/apt/lists/* \
     && echo "shared_preload_libraries='pg_partman_bgw,pg_cron'" >> /usr/share/postgresql/postgresql.conf.sample
