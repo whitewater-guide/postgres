@@ -20,4 +20,4 @@ RUN apt-get update \
     && cd /tmp && rm -rf pg_partman \
     && apt-get remove --purge -yy git make gcc postgresql-server-dev-13 \
     && rm -rf /var/lib/apt/lists/* \
-    && echo "shared_preload_libraries='pg_partman_bgw,pg_cron'" >> /usr/share/postgresql/postgresql.conf.sample
+    && echo "shared_preload_libraries='pg_cron'" >> /usr/share/postgresql/postgresql.conf.sample
